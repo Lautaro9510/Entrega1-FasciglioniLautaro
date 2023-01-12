@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista de platos
+{% endblock %}
+
+{% block content %}
+    <h1>Esta es nuestra lista de platos</h1>
+    
+    {% for plato in platos %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{plato.nombre}}</h5>
+            <p class="card-text">Su especialidad es: {{plato.especialidad}}</p>
+            <p class="card-text">Su precio es: ${{plato.precio}}</p>
+            {% if plato.apto_vegetariano == True %}
+                <p>Es apto para vegetarianos!</p>
+            {% else %}
+                <p> </p>
+            {% endif %}
+            {% if plato.apto_vegano == True %}
+                <p>Es apto para veganos!</p>
+            {% else %}
+                <p> </p>
+            {% endif %}     
+            {% if plato.apto_celiaco == True %}
+                <p>Es apto para celiacos!</p>
+            {% else %}
+                <p> </p>
+            {% endif %}                                  
+            {% if plato.stock == True %}
+                <p>Actualmente hay stock</p>
+            {% else %}
+                <p>Actualmente no hay stock</p>
+            {% endif %}
+            <a href="#" class="btn btn-primary">Pedir</a>
+            </div>
+        </div>
+       
+    {% endfor %}
+    
+    <h2>Añadir un plato </h2> <a href="/platos/crear_plato/" class="btn btn-primary">Crear</a>
+
+{% endblock %}

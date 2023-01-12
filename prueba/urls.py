@@ -20,5 +20,6 @@ from prueba.views import index
 urlpatterns = [
     path('', index, name='index'),
     path('admin/', admin.site.urls),
-    path('restaurantes/', include('restaurantes.urls'))
+    path('restaurantes/', include('restaurantes.urls')),
+    path('platos/', include('platos.urls')),
 ]

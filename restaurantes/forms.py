@@ -5,5 +5,5 @@ class RestaurantesForm(forms.Form):
     especialidad=forms.CharField(max_length=20)
     direccion= forms.CharField(max_length=70)
     telefono=forms.CharField(max_length=11)
-    abierto=forms.BooleanField()    
+    abierto=forms.BooleanField(required= False)    
    
