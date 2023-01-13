@@ -7,7 +7,7 @@ from restaurantes.forms import RestaurantesForm
 def lista_restaurantes(request):
     if 'search' in request.GET:
         search = request.GET['search']
-        restaurante = Restaurantes.objects.filter(name__icontains=search)
+        restaurante = Restaurantes.objects.filter(nombre__icontains=search)
     else:
         restaurante = Restaurantes.objects.all()
     context = {

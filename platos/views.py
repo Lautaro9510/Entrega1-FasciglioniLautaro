@@ -7,7 +7,7 @@ from platos.forms import PlatosForm
 def lista_platos(request):
     if 'search' in request.GET:
         search = request.GET['search']
-        plato = Platos.objects.filter(name__icontains=search)
+        plato = Platos.objects.filter(nombre__icontains=search)
     else:
         plato = Platos.objects.all()
     context = {

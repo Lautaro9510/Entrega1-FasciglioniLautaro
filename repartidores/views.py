@@ -7,7 +7,7 @@ from repartidores.forms import RepartidoresForm
 def lista_repartidores(request):
     if 'search' in request.GET:
         search = request.GET['search']
-        repartidor = Repartidores.objects.filter(name__icontains=search)
+        repartidor = Repartidores.objects.filter(nombre__icontains=search)
     else:
         repartidor = Repartidores.objects.all()
     context = {
