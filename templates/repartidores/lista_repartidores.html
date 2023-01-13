@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista de repartidores
+{% endblock %}
+
+{% block content %}
+    <h1>Esta es nuestra lista de repartidores</h1>
+    
+    {% for repartidor in repartidores %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{repartidor.nombre}}</h5>
+            <p class="card-text">Su vehiculo es: {{repartidor.vehiculo}}</p>
+            <p class="card-text">Su direccion es: {{repartidor.direccion}}</p>
+            <p class="card-text">Su Email es: {{repartidor.email}}</p>
+            {% if repartidor.trabajando == True %}
+                <p>Actualmente está trabajando</p>
+            {% else %}
+                <p>Actualmente no está trabajando</p>
+            {% endif %}
+            <a href="#" class="btn btn-primary">Asignar envío</a>
+            </div>
+        </div>
+       
+    {% endfor %}
+    
+    <h2>Añadir un repartidor </h2> <a href="/repartidores/crear_repartidor/" class="btn btn-primary">Añadir</a>
+
+{% endblock %}
